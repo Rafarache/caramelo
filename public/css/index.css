@@ -1,0 +1,22 @@
+body {
+    padding: 30px;
+    margin: 0px;
+    background-image: url(https://images.all-free-download.com/images/graphiclarge/pets_background_dogs_bone_icons_decoration_repeating_style_6828678.jpg);
+}
+.logo_site {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+    color: black;
+    background-color: white;
+    padding: 10px;
+}
+.logo_site > h1 {
+    margin: 0px;
+    font-size: 70px;
+    font-weight: 900;
+    font-style: italic;
+    color: orangered;
+    margin-top: -10px;
+}

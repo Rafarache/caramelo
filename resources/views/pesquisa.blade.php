@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
         <style>
             <?php include 'css/navbar.css'; ?>
             <?php include 'css/index.css'; ?>
+            <?php include 'css/pet_card.css'; ?>
         </style>
     </head>
     <body>
@@ -22,7 +23,23 @@ use App\Http\Controllers\UserController;
             <a class="nav_button button" href="{{ url('/sobre') }}">SOBRE</a>
         </div>
 		<div class="main_container">
-			<h1>PESQUISA</h1>
+            <div class="pet_card">
+            <div class="pet_card_image"></div>
+            <div class="pet_card_description">
+                <div class="pet_card_text keep_size">
+                    Nome: Lucia <br>
+                    Espécie: Cachorro <br>
+                    ONG: Patinhas <br>
+                    Temperamento: Calma <br>
+                    Porte: Médio <br>
+                </div>
+                <div class="box_status keep_size">
+                    Status:
+                    <div class="status">Lar temporário</div>
+                    <div class="status">Adoção</div>
+                </div>
+            </div>
+        </div>
 		</div>
     </body>
 </html>

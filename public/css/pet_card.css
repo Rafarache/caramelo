@@ -3,6 +3,11 @@
     width: 200px;
     position: relative;
     font-family: 'Roboto', sans-serif;
+    margin-left: 10px;
+    flex-wrap: wrap;
+}
+.pet_card:first-child {
+    margin-left: 0px;
 }
 .pet_card_image {
     height: 50%;

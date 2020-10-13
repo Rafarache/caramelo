@@ -22,24 +22,38 @@ use App\Http\Controllers\UserController;
             <a class="nav_button button" href="{{ url('/cadastro') }}">CADASTRO</a>
             <a class="nav_button button" href="{{ url('/sobre') }}">SOBRE</a>
         </div>
-		<div class="main_container">
+        <div class="main_container" style="	display: flex;flex-wrap: wrap;">   
+            <a href="pesquisa">Todos</a>
+            <a href="?espécie=Cachorro">Cachorro</a>
+            <a href="?espécie=Gato">Gato</a>
+            <a href="?espécie=Cachorro">Cachorro</a>
+            <a href="?espécie=Gato">Gato</a>
+            @foreach($pets as $pet)
             <div class="pet_card">
-            <div class="pet_card_image"></div>
-            <div class="pet_card_description">
-                <div class="pet_card_text keep_size">
-                    Nome: Lucia <br>
-                    Espécie: Cachorro <br>
-                    ONG: Patinhas <br>
-                    Temperamento: Calma <br>
-                    Porte: Médio <br>
-                </div>
-                <div class="box_status keep_size">
-                    Status:
-                    <div class="status">Lar temporário</div>
-                    <div class="status">Adoção</div>
+                <div class="pet_card_image"></div>
+                <div class="pet_card_description">
+                    <div class="pet_card_text keep_size">
+                        Nome: {{$pet->nome}} <br>
+                        Espécie: {{$pet->espécie}} <br>
+                        ONG: # <br>
+                        Temperamento: {{$pet->temperamento}} <br>
+                        Porte: {{$pet->porte}} <br>
+                    </div>
+                    <div class="box_status keep_size">
+                        Status:
+                        @if ($pet->status === 'Lar Temporário')
+                            <div class="status">Lar temporário</div>
+                        @endif
+                        @if ($pet->status === 'Aguardando')
+                            <div class="status">Aguardando</div>
+                        @endif
+                        @if ($pet->status === 'Adotado')
+                            <div class="status">Adotado</div>
+                        @endif
+                    </div>
                 </div>
             </div>
-        </div>
+            @endforeach
 		</div>
     </body>
 </html>

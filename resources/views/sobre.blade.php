@@ -19,10 +19,23 @@ use App\Http\Controllers\UserController;
         <div class="nav_container">
             <a class="nav_button button" href="{{ url('/pesquisa') }}">PESQUISA</a>
             <a class="nav_button button" href="{{ url('/cadastro') }}">CADASTRO</a>
-            <a class="nav_button button" href="{{ url('/sobre') }}">SOBRE</a>
+            <a class="nav_button button" href="{{ url('/sobre') }}" style="background-color: #4b2b04">SOBRE</a>
         </div>
 		<div class="main_container">
-			<h1>INÍCIO</h1>
-		</div>
+			<h1>SOBRE</h1>
+			
+			Site desenvolvido para a disciplina INF01127- Engenharia de Software N - Turma B - 2020/1 - UFRGS <br>
+			Profa. Dra. Lucin&eacute;ia Heloisa Thom
+			
+			<br><br>
+			<h2>Integrantes</h2>
+			
+			Andrei Procaska Luchese Monteiro <br>
+			Rafael Marques Rache <br>
+			Jo&atilde;o Fernando Almeida Caemerer <br>
+			Bruna Casagranda Cagliari <br>
+			Andrews Lima Rodrigues <br>
+			
+		</div>		
     </body>
 </html>

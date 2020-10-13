@@ -18,11 +18,11 @@ use App\Http\Controllers\UserController;
         </div>
         <div class="nav_container">
             <a class="nav_button button" href="{{ url('/pesquisa') }}">PESQUISA</a>
-            <a class="nav_button button" href="{{ url('/cadastro') }}">CADASTRO</a>
+            <a class="nav_button button" href="{{ url('/cadastro') }}" style="background-color: #4b2b04">CADASTRO</a>
             <a class="nav_button button" href="{{ url('/sobre') }}">SOBRE</a>
         </div>
 		<div class="main_container">
-			<h1>INÍCIO</h1>
+			<h1>CADASTRO</h1>
 		</div>
     </body>
 </html>

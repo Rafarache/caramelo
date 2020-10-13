@@ -26,8 +26,6 @@ use App\Http\Controllers\UserController;
             <a href="pesquisa">Todos</a>
             <a href="?espécie=Cachorro">Cachorro</a>
             <a href="?espécie=Gato">Gato</a>
-            <a href="?espécie=Cachorro">Cachorro</a>
-            <a href="?espécie=Gato">Gato</a>
             @foreach($pets as $pet)
             <div class="pet_card">
                 <div class="pet_card_image"></div>

@@ -20,8 +20,8 @@ class CreatePetsTable extends Migration
             $table->enum('espécie', ['Cachorro', 'Gato']);
             $table->string('raça');
             $table->string('temperamento');
-            $table->enum('porte', ['Grande', 'Médio','Pequeno']);
-            $table->enum('status', ['Lar Temporário', 'Adotado','Aguardando']);
+            $table->enum('porte', ['Grande', 'Medio','Pequeno']);
+            $table->enum('status', ['Lar Temporario', 'Adotado','Aguardando']);
         });
     }
 

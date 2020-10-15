@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/pesquisa', 'App\Http\Controllers\PesquisaController@index');
+Route::get('/pesquisa', 'App\Http\Controllers\PesquisaController@index')->name('pesquisa');
 
 Route::get('/cadastro', function () {
     return view('cadastro');

@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
             <?php include 'css/navbar.css'; ?>
             <?php include 'css/index.css'; ?>
             <?php include 'css/pet_card.css'; ?>
+            <?php include 'css/filter.css'; ?>
         </style>
     </head>
     <body>
@@ -22,10 +23,21 @@ use App\Http\Controllers\UserController;
             <a class="nav_button button" href="{{ url('/cadastro') }}">CADASTRO</a>
             <a class="nav_button button" href="{{ url('/sobre') }}">SOBRE</a>
         </div>
-        <div class="main_container" style="	display: flex;flex-wrap: wrap;">   
-            <a href="pesquisa">Todos</a>
-            <a href="?espécie=Cachorro">Cachorro</a>
-            <a href="?espécie=Gato">Gato</a>
+        <div class="main_container" style="	display: flex;flex-wrap: wrap;">
+            <div class="filter">
+                <div class="collumn">
+                    Espécie: 
+                    <a class="filter_button" href="{{ route('pesquisa', ['espécie' => 'Cachorro', 'porte' => request('porte')])}}">Cachorro</a>
+                    <a class="filter_button" href="{{ route('pesquisa', ['espécie' => 'Gato', 'porte' => request('porte')])}}">Gato</a>
+                    </div>
+                    <div class="collumn">
+                        Porte: 
+                        <a class="filter_button" href="{{ route('pesquisa', ['espécie' => request('espécie'), 'porte' => 'Pequeno'])}}">Pequeno</a>
+                        <a class="filter_button" href="{{ route('pesquisa', ['espécie' => request('espécie'), 'porte' => 'Medio'])}}">Médio</a>
+                        <a class="filter_button" href="{{ route('pesquisa', ['espécie' => request('espécie'), 'porte' => 'Grande'])}}">Grande</a>
+                    </div>
+                    <a class="filter_button todos" href="pesquisa">Todos</a>
+                </div>
             @foreach($pets as $pet)
             <div class="pet_card">
                 <div class="pet_card_image"></div>

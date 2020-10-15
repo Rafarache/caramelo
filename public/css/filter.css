@@ -1,0 +1,29 @@
+.collumn {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0px;
+    align-items: center;
+}
+
+.filter {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter_button {
+    background-color: #b7784c;
+    padding: 10px;
+    margin: 0px 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    width: min-content;
+}
+
+.todos {
+    margin-top: 10px;
+    background-color: #4b2b04;
+}

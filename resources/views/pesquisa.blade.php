@@ -29,18 +29,24 @@ use App\Http\Controllers\UserController;
                     Espécie: 
                     <a class="filter_button" href="{{ route('pesquisa', ['espécie' => 'Cachorro', 'porte' => request('porte')])}}">Cachorro</a>
                     <a class="filter_button" href="{{ route('pesquisa', ['espécie' => 'Gato', 'porte' => request('porte')])}}">Gato</a>
-                    </div>
-                    <div class="collumn">
-                        Porte: 
-                        <a class="filter_button" href="{{ route('pesquisa', ['espécie' => request('espécie'), 'porte' => 'Pequeno'])}}">Pequeno</a>
-                        <a class="filter_button" href="{{ route('pesquisa', ['espécie' => request('espécie'), 'porte' => 'Medio'])}}">Médio</a>
-                        <a class="filter_button" href="{{ route('pesquisa', ['espécie' => request('espécie'), 'porte' => 'Grande'])}}">Grande</a>
-                    </div>
-                    <a class="filter_button todos" href="pesquisa">Todos</a>
                 </div>
+                <div class="collumn">
+                    Porte: 
+                    <a class="filter_button" href="{{ route('pesquisa', ['espécie' => request('espécie'), 'porte' => 'Pequeno'])}}">Pequeno</a>
+                    <a class="filter_button" href="{{ route('pesquisa', ['espécie' => request('espécie'), 'porte' => 'Medio'])}}">Médio</a>
+                    <a class="filter_button" href="{{ route('pesquisa', ['espécie' => request('espécie'), 'porte' => 'Grande'])}}">Grande</a>
+                </div>
+                <a class="filter_button todos" href="pesquisa">Todos</a>
+            </div>
             @foreach($pets as $pet)
             <div class="pet_card">
-                <div class="pet_card_image"></div>
+                <?php 
+                if(!empty($pet->image)) {
+                    echo '<img class="pet_card_image" src="data:image/jpeg;base64,'.base64_encode( $pet->image ).'"/>'; 
+                }
+                else {
+                    echo '<img class="pet_card_image" src="no_image.jpg"/>'; 
+                }?>
                 <div class="pet_card_description">
                     <div class="pet_card_text keep_size">
                         Nome: {{$pet->nome}} <br>
@@ -51,7 +57,7 @@ use App\Http\Controllers\UserController;
                     </div>
                     <div class="box_status keep_size">
                         Status:
-                        @if ($pet->status === 'Lar Temporário')
+                        @if ($pet->status === 'Lar Temporario')
                             <div class="status">Lar temporário</div>
                         @endif
                         @if ($pet->status === 'Aguardando')

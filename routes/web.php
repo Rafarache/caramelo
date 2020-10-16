@@ -17,9 +17,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/pesquisa', function () {
-    return view('pesquisa');
-});
+Route::get('/pesquisa', 'App\Http\Controllers\PesquisaController@index')->name('pesquisa');
 
 Route::get('/cadastro', function () {
     return view('cadastro');
@@ -28,6 +26,9 @@ Route::get('/cadastro', function () {
 Route::get('/sobre', function () {
     return view('sobre');
 });
+
+Route::get('/pets/{id}', 'App\Http\Controllers\PetsDetail@index');
+
 
 
 

@@ -39,7 +39,7 @@ use App\Http\Controllers\UserController;
                 <a class="filter_button todos" href="pesquisa">Todos</a>
             </div>
             @foreach($pets as $pet)
-            <div class="pet_card">
+            <a href="/pets/{{$pet->id}}" class="pet_card" >
                 <?php 
                 if(!empty($pet->image)) {
                     echo '<img class="pet_card_image" src="data:image/jpeg;base64,'.base64_encode( $pet->image ).'"/>'; 
@@ -68,7 +68,7 @@ use App\Http\Controllers\UserController;
                         @endif
                     </div>
                 </div>
-            </div>
+            </a>
             @endforeach
 		</div>
     </body>

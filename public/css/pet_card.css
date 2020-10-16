@@ -4,8 +4,11 @@
     position: relative;
     font-family: 'Roboto', sans-serif;
     margin-left: 10px;
+    margin-bottom: 10px;
     flex-wrap: wrap;
     background-color: white;
+    text-decoration: none;
+    color: black;
 }
 .pet_card:first-child {
     margin-left: 0px;

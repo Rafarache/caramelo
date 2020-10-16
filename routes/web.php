@@ -27,6 +27,9 @@ Route::get('/sobre', function () {
     return view('sobre');
 });
 
+Route::get('/pets/{id}', 'App\Http\Controllers\PetsDetail@index');
+
+
 
 
 

@@ -29,6 +29,9 @@ Route::get('/sobre', function () {
 
 Route::get('/pets/{id}', 'App\Http\Controllers\PetsDetail@index');
 
+Route::get('/ongs/{id}', 'App\Http\Controllers\OngsDetail@index');
+
+
 
 
 

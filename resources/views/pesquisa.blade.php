@@ -51,7 +51,7 @@ use App\Http\Controllers\UserController;
                     <div class="pet_card_text keep_size">
                         Nome: {{$pet->nome}} <br>
                         Espécie: {{$pet->espécie}} <br>
-                        ONG: # <br>
+                        ONG: {{$pet->ong}}<br>
                         Temperamento: {{$pet->temperamento}} <br>
                         Porte: {{$pet->porte}} <br>
                     </div>

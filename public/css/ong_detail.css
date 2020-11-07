@@ -1,0 +1,8 @@
+.ong_container {
+    display: flex;
+}
+
+.pet-cards-container {
+    display: flex;
+    padding-top: 10px;
+}

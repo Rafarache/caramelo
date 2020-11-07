@@ -12,10 +12,6 @@ use App\Http\Controllers\UserController;
         </style>
     </head>
     <body>
-        <div class="logo_site">
-			<center><a href="{{ url('/') }}">
-			<img src="logo_caramelo.png" alt="Site Caramelo" width="700"></a></center>
-        </div>
         <div class="nav_container">
             <a class="nav_button button" href="{{ url('/pesquisa') }}">PESQUISA</a>
             <a class="nav_button button" href="{{ url('/cadastro') }}">CADASTRO</a>
@@ -33,7 +29,7 @@ use App\Http\Controllers\UserController;
                 <div style="margin-left: 20px;font-size: 2.5rem">
                     Nome: {{$pet->nome}} <br>
                     Espécie: {{$pet->espécie}} <br>
-                    ONG: # <br>
+                    ONG: {{$pet->ong}} <br>
                     Temperamento: {{$pet->temperamento}} <br>
                     Porte: {{$pet->porte}} <br>
                 </div>

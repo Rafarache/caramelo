@@ -20,12 +20,32 @@ Route::get('/', function () {
 Route::get('/pesquisa', 'App\Http\Controllers\PesquisaController@index')->name('pesquisa');
 
 Route::get('/cadastro', function () {
-    return view('cadastro');
+    return view('\auth\register');
 });
 
 Route::get('/sobre', function () {
     return view('sobre');
 });
+
+Route::get('/login', function () {
+    return view('\auth\login');
+});
+
+Route::get('/ong_login', function () {
+    return view('ong_login');
+});
+	
+Route::get('/ong_register', function () {
+    return view('ong_register');
+});
+
+Route::get('/ongs_mng', function () {
+    return view('ongs_mng');
+});
+
+Route::post('/registro_ong','App\Http\Controllers\ONGController@registro');
+
+Route::post('/logar_ong', 'App\Http\Controllers\ONGController@login');
 
 Route::get('/pets/{id}', 'App\Http\Controllers\PetsDetail@index');
 
@@ -33,3 +53,7 @@ Route::get('/pets/{id}', 'App\Http\Controllers\PetsDetail@index');
 
 
 
+
+Auth::routes();
+
+Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

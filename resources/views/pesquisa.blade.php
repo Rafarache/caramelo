@@ -24,7 +24,11 @@ use App\Http\Controllers\UserController;
             <a class="nav_button button" href="{{ url('/sobre') }}">SOBRE</a>
         </div>
         <div class="main_container" style="	display: flex;flex-wrap: wrap;">
-            <div class="filter">
+            <?php UserController::logged() ?>
+			@if (session('Reg_User'))
+					<h1><?php print_r(session('Reg_User')[0]->name);?></h1>
+				@endif
+			<div class="filter">
                 <div class="collumn">
                     Espécie: 
                     <a class="filter_button" href="{{ route('pesquisa', ['espécie' => 'Cachorro', 'porte' => request('porte')])}}">Cachorro</a>

@@ -43,7 +43,9 @@ Route::get('/ongs_mng', function () {
     return view('ongs_mng');
 });
 
-Route::post('/registro_ong','App\Http\Controllers\ONGController@registro');
+Route::get('/ong_logout', 'App\Http\Controllers\ONGController@logout');
+
+Route::post('/registro_ong','App\Http\Controllers\ONGController@check_reg');
 
 Route::post('/logar_ong', 'App\Http\Controllers\ONGController@login');
 

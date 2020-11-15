@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\ONGController;
+
 ?>
 
 
@@ -11,6 +12,9 @@ use App\Http\Controllers\UserController;
             <?php include 'css/navbar.css'; ?>
             <?php include 'css/index.css'; ?>
         </style>
+		@if (!session()->has('ONG'))
+			<meta http-equiv="refresh" content="0; url='/ong_login'" />
+		@endif
     </head>
     <body>
         <div class="logo_site">
@@ -26,10 +30,8 @@ use App\Http\Controllers\UserController;
 			
         </div>
 		<div class="main_container">
-			<?php
-				$ong =  session('ONG')
-			?>
-			<h1>Gerenciamento {{ $ong }}</h1>
+		<a href='/ong_logout'>log out</a>
+			<h1>Gerenciamento {{session('ONG')->name }}</h1>
 		</div>
     </body>
 </html>

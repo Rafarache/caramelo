@@ -26,6 +26,11 @@ use App\Http\Controllers\ONGController;
         </div>
 		<div class="main_container">
 			<h1>CADASTRO ONGS</h1>
+			@if (session('message'))
+				<div class= "alert alert-danger alert-block":
+					<button type="button" class="close" data-dismiss="alert">x</button>
+					<strong>{{ session('message') }}</strong></div>
+			@endif
 			<form class="" action="{{URL::to('/registro_ong')}}" method="post">
 				<hr>Nome</hr>&emsp;<input type="text" name="name" value="" placeholder="Enter your name">
 				<br>

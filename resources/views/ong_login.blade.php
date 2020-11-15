@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 use App\Http\Controllers\ONGController;
+use App\Models\Ong_log;
 ?>
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -31,6 +32,11 @@ use App\Http\Controllers\ONGController;
 					<button type="button" class="close" data-dismiss="alert">x</button>
 					<strong>{{ session('message') }}</strong></div>
 				@endif
+								
+				@if (session()->has('ONG'))
+					<meta http-equiv="refresh" content="0; url='/ongs_mng'" />
+				@endif
+					
 				<form class="" action="{{URL::to('/logar_ong')}}" method="post">
 					<hr>Email</hr>&emsp;<input type="email" name="email" value="" placeholder="Enter your email">
 					<hr>Senha</hr>&emsp;<input type="password" name="senha" value="" placeholder="Enter your password">

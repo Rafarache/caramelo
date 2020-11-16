@@ -41,7 +41,7 @@ use App\Http\Controllers\UserController;
             @foreach($pets as $pet)
             <a href="/pets/{{$pet->id}}" class="pet_card" >
                 @if(!empty($pet->image))
-                    <img class="pet_card_image" src="{{asset('storage/app/',$pet->image)}}>
+                    <img class="pet_card_image" src="uploads/{{$pet->image}}">
                 @endif
                 @if(empty($pet->image))
                     <img class="pet_card_image" src="no_image.jpg"/> 

@@ -81,7 +81,12 @@ class ONGController extends Controller
 		$pet->porte = request('porte');
 		$pet->status = request('status');
 		$pet->status = 'Aguardando';
-		$pet->image = request('image');
+
+		$image = $request->file('image');
+		$filename = time().'.'.$image->getClientOriginalExtension();
+		$image->move('uploads/', $filename);
+		$pet->image = $filename;
+		//Image::make($image)->save($location);
 
 		$pet->save();
 

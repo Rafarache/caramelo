@@ -23,7 +23,6 @@ use App\Models\Ong_log;
 			<a class="nav_button button" href="{{url('/login')}}">LOGIN</a>
 			<a class="nav_button button" href="{{url('/ong_login')}}">ONGS</a>
             <a class="nav_button button" href="{{ url('/sobre') }}">SOBRE</a>
-			
         </div>
 		<div class="main_container">
 				<h1>Login ONGS</h1>

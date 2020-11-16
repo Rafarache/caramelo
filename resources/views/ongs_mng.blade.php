@@ -27,7 +27,6 @@ use App\Http\Controllers\ONGController;
 			<a class="nav_button button" href="{{url('/login')}}">LOGIN</a>
 			<a class="nav_button button" href="{{url('/ong_login')}}">ONGS</a>
             <a class="nav_button button" href="{{ url('/sobre') }}">SOBRE</a>
-			
         </div>
 		<div class="main_container">
 		<a href='/ong_logout'>log out</a>

@@ -19,8 +19,10 @@ use App\Http\Controllers\UserController;
 			<img src="logo_caramelo.png" alt="Site Caramelo" width="700"></a></center>
         </div>
         <div class="nav_container">
-            <a class="nav_button button" href="{{ url('/pesquisa') }}" style="background-color: #4b2b04">PESQUISA</a>
+            <a class="nav_button button" href="{{ url('/pesquisa') }}">PESQUISA</a>
             <a class="nav_button button" href="{{ url('/cadastro') }}">CADASTRO</a>
+			<a class="nav_button button" href="{{url('/login')}}">LOGIN</a>
+			<a class="nav_button button" href="{{url('/ong_login')}}">ONGS</a>
             <a class="nav_button button" href="{{ url('/sobre') }}">SOBRE</a>
         </div>
         <div class="main_container" style="	display: flex;flex-wrap: wrap;">

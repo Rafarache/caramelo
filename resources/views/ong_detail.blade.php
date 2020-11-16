@@ -30,9 +30,9 @@ use App\Http\Controllers\UserController;
                             echo '<img class="pet_card_image" src="no_image.jpg"/>'; 
                     }?>
                     <div style="margin-left: 20px;font-size: 2.5rem">
-                        Nome: {{$ong->nome}} <br>
-                        Endereço: {{$ong->endereço}} <br>
-                        Telefone: {{$ong->telefone}} <br>
+                        Nome: {{$ong->name}} <br>
+                        Endereço: {{$ong->address}} <br>
+                        Telefone: {{$ong->phone}} <br>
                         E-mail: {{$ong->email}} <br>
                     </div>
                 @endforeach
@@ -40,13 +40,12 @@ use App\Http\Controllers\UserController;
             <div class="pet-cards-container">
                 @foreach($pets as $pet)
                 <a href="/pets/{{$pet->id}}" class="pet_card" >
-                    <?php 
-                    if(!empty($pet->image)) {
-                        echo '<img class="pet_card_image" src="data:image/jpeg;base64,'.base64_encode( $pet->image ).'"/>'; 
-                    }
-                    else {
-                        echo '<img class="pet_card_image" src="no_image.jpg"/>'; 
-                    }?>
+                    @if(!empty($pet->image))
+                        <img class="pet_card_image" src="../uploads/{{$pet->image}}">
+                    @endif
+                    @if(empty($pet->image))
+                        <img class="pet_card_image" src="../no_image.jpg"/> 
+                    @endif
                     <div class="pet_card_description">
                         <div class="pet_card_text keep_size">
                             Nome: {{$pet->nome}} <br>

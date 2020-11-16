@@ -19,7 +19,7 @@ class OngsDetail extends Controller
             $singleOng = $ong;
 
         $pets = Pet::all();
-        $pets = $pets->where('ong', $singleOng->nome);
+        $pets = $pets->where('ong', $singleOng->name);
 
         return view('ong_detail', ['ongs' => $ongs, 'pets' => $pets]);
     }

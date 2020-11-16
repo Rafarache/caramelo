@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Validator;
 use Auth;
 use App\Models\Ong_log;
 
+use App\Models\Pet;
+
 
 class ONGController extends Controller
 {
@@ -66,6 +68,24 @@ class ONGController extends Controller
 	public function logout(){
 		session()->forget('ONG');
 		return redirect('ong_login');
+	}
+
+	public function store(Request $request){
+
+		$pet = new Pet();
+		
+		$pet->nome = request('nome');
+		$pet->espécie = request('espécie');
+		$pet->raça = request('raça');
+		$pet->temperamento = request('temperamento');
+		$pet->porte = request('porte');
+		$pet->status = request('status');
+		$pet->status = 'Aguardando';
+		$pet->image = request('image');
+
+		$pet->save();
+
+		return redirect('/');
 	}
 	
 }

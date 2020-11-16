@@ -35,6 +35,5 @@ class ONGController extends Controller
 				return back()->with('message', 'dados de login incorretos');
 		}
 	}
-	
 }
 ?>

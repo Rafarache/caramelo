@@ -40,13 +40,12 @@ use App\Http\Controllers\UserController;
             </div>
             @foreach($pets as $pet)
             <a href="/pets/{{$pet->id}}" class="pet_card" >
-                <?php 
-                if(!empty($pet->image)) {
-                    echo '<img class="pet_card_image" src="data:image/jpeg;base64,'.base64_encode( $pet->image ).'"/>'; 
-                }
-                else {
-                    echo '<img class="pet_card_image" src="no_image.jpg"/>'; 
-                }?>
+                @if(!empty($pet->image))
+                    <img class="pet_card_image" src="{{asset('storage/app/',$pet->image)}}>
+                @endif
+                @if(empty($pet->image))
+                    <img class="pet_card_image" src="no_image.jpg"/> 
+                @endif
                 <div class="pet_card_description">
                     <div class="pet_card_text keep_size">
                         Nome: {{$pet->nome}} <br>

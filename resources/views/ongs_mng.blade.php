@@ -33,33 +33,34 @@ use App\Http\Controllers\ONGController;
 		<a href='/ong_logout'>log out</a>
 			<h1>Gerenciamento {{session('ONG')->name }}</h1>
         <div class="">
-            <h1>Create a New Pizza</h1>
+            <h3>Cadastre um Pet</h3>
             <form action="/ongs_mng" method="POST" enctype="multipart/form-data">
                 @csrf
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome" required>
-
+                <br>
                 <label for="espécie">Espécie:</label>
                 <select name="espécie" id="espécie" required>
                     <option value="Cachorro">Cachorro</option>
                     <option value="Gato">Gato</option>
                 </select>
-
+                <br>
                 <label for="raça">Raça:</label>
                 <input type="text" name="raça" id="raça" required>
-
+                <br>
                 <label for="temperamento">Temperamento:</label>
                 <input type="text" name="temperamento" id="temperamento" required>
-                
+                <br>
                 <label for="base">Choose crust:</label>
                 <select name="porte" id="porte" required>
                     <option value="Grande">Grande</option>
                     <option value="Medio">Medio</option>
                     <option value="Pequeno">Pequeno</option>
                 </select>
-
+                <br>
                 <label for="image">Imagem</label>
                 <input id="image" type="file" name="image" accept="image/*" required>
+                <br><br>
                 <input type="submit" value="Cadastrar">
             </form>
 		</div>

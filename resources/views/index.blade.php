@@ -3,6 +3,10 @@
 use App\Http\Controllers\UserController;
 ?>
 
+@extends('layouts.app')
+
+@section('content')
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -19,7 +23,10 @@ use App\Http\Controllers\UserController;
         <div class="nav_container">
             <a class="nav_button button" href="{{ url('/pesquisa') }}">PESQUISA</a>
             <a class="nav_button button" href="{{ url('/cadastro') }}">CADASTRO</a>
+			<a class="nav_button button" href="{{url('/login')}}">LOGIN</a>
+			<a class="nav_button button" href="{{url('/ong_login')}}">ONGS</a>
             <a class="nav_button button" href="{{ url('/sobre') }}">SOBRE</a>
+			
         </div>
 		<div class="main_container">
 			<h1>INÍCIO</h1>

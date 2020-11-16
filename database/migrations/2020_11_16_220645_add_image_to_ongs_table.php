@@ -14,7 +14,7 @@ class AddImageToOngsTable extends Migration
     public function up()
     {
         Schema::table('ongs', function (Blueprint $table) {
-            $table->binary('image');
+            $table->binary('image')->default('no_image.jpg');
         });
     }
 

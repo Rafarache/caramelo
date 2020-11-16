@@ -33,7 +33,7 @@ use App\Http\Controllers\UserController;
                 <div style="margin-left: 20px;font-size: 2.5rem">
                     Nome: {{$pet->nome}} <br>
                     Espécie: {{$pet->espécie}} <br>
-                    ONG: # <br>
+                    ONG: {{$pet->ong}} <br>
                     Temperamento: {{$pet->temperamento}} <br>
                     Porte: {{$pet->porte}} <br>
                 </div>

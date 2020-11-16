@@ -53,6 +53,9 @@ Route::post('/logar_ong', 'App\Http\Controllers\ONGController@login');
 
 Route::get('/pets/{id}', 'App\Http\Controllers\PetsDetail@index');
 
+Route::get('/ongs/{id}', 'App\Http\Controllers\OngsDetail@index');
+
+
 
 
 

@@ -2,14 +2,13 @@
 <?php
 use App\Http\Controllers\UserController;
 ?>
-
 @extends('layouts.app')
 
 @section('content')
-
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
+		<title>Caramelo | Site de Adoção e Lar Temporário</title>
         <style>
             <?php include 'css/navbar.css'; ?>
             <?php include 'css/index.css'; ?>
@@ -29,7 +28,11 @@ use App\Http\Controllers\UserController;
 			
         </div>
 		<div class="main_container">
-			<h1>INÍCIO</h1>
+			@if(Auth::check())
+				<center><h1>Bem-Vindo {{ Auth::user()->name }}</h1></center>
+			@else
+				<center><h1>Bem-Vindo ao Caramelo</h1></center>
+			@endif
 		</div>
     </body>
 </html>

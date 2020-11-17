@@ -45,6 +45,8 @@ Route::get('/ongs_mng', function () {
     return view('ongs_mng');
 });
 
+Route::post('/registra_adocao','App\Http\Controllers\PetsDetail@registra_adocao');
+
 Route::get('/ong_logout', 'App\Http\Controllers\ONGController@logout');
 
 Route::post('/registro_ong','App\Http\Controllers\ONGController@check_reg');
@@ -52,9 +54,6 @@ Route::post('/registro_ong','App\Http\Controllers\ONGController@check_reg');
 Route::post('/logar_ong', 'App\Http\Controllers\ONGController@login');
 
 Route::get('/pets/{id}', 'App\Http\Controllers\PetsDetail@index');
-
-Route::get('/ongs/{id}', 'App\Http\Controllers\OngsDetail@index');
-
 
 
 

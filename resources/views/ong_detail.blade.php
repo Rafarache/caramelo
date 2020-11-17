@@ -30,16 +30,15 @@ use App\Http\Controllers\UserController;
         <div class="main_container" style="display:block">
             <div class="ong_container">
                 @foreach($ongs as $ong)
-                    <?php 
-                        if(!empty($ong->image)) {
-                            echo '<img class="pet_card_image" src="data:image/jpeg;base64,'.base64_encode( $ong->image ).'"/>'; 
-                        }
-                        else {
-                            echo '<img class="pet_card_image" src="no_image.jpg"/>'; 
-                    }?>
+                    @if(!empty($pet->image))
+                        <img class="pet_card_image" src="../uploads/{{$ong->image}}">
+                    @endif
+                    @if(empty($pet->image))
+                        <img class="pet_card_image" src="../no_image.jpg"/> 
+                    @endif
                     <div style="margin-left: 20px;font-size: 2.5rem">
-                        Nome: {{$ong->nome}} <br>
-                        Endereço: {{$ong->endereço}} <br>
+                        Nome: {{$ong->name}} <br>
+                        Endereço: {{$ong->address}} <br>
                         Telefone: {{$ong->telefone}} <br>
                         E-mail: {{$ong->email}} <br>
                     </div>
